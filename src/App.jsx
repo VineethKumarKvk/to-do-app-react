@@ -40,8 +40,11 @@ function App() {
         <Header />
       </header>
       <main>
-        <TextInput value={inputValue} onChange={inputChangeHandler} />
+        <div className="text-input-container">
+          <TextInput value={inputValue} onChange={inputChangeHandler} />
+        </div>
         <Button onClick={clickHandler}>Add</Button>
+        {listValue.length ? <h3>Tasks</h3>:undefined}
         <JustList items={listValue} /> {/* Use listValue instead of LIST_TO_DO */}
       </main>
     </>

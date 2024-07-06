@@ -1,3 +1,67 @@
-.strikethrough {
-    text-decoration: line-through;
+/* Container for JustList component */
+.just-list-container {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  width: 100%; /* Ensure it takes the full width of its parent */
+}
+
+/* Container for each checkbox and label pair */
+.checkbox-label-container {
+  display: flex;
+  align-items: center; /* Align items vertically */
+  margin-bottom: 10px; /* Space between each checkbox-label pair */
+}
+
+/* Checkbox Styles */
+.my-control-input {
+  margin-right: 10px; /* Adjust margin between checkbox and label */
+  width: 20px; /* Set a fixed width for the checkbox */
+  height: 20px; /* Set a fixed height for the checkbox */
+  flex-shrink: 0; /* Prevent checkboxes from shrinking */
+}
+
+/* Label Styles */
+.my-control-label {
+  font-size: 16px; /* Font size for label */
+  margin: 0; /* Remove default margin */
+  cursor: pointer; /* Pointer cursor */
+  white-space: nowrap; /* Prevent text wrapping */
+  flex-shrink: 1; /* Allow labels to shrink if necessary */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.my-control-label.strikethrough {
+  text-decoration: none; /* Remove default strikethrough */
+  position: relative; /* Enable absolute positioning */
+  color: #00ff00; /* Lighter color for checked items */
+}
+
+.my-control-label.strikethrough::after {
+  content: ""; /* Empty content for pseudo-element */
+  position: absolute; /* Position relative to label */
+  left: 0; /* Start from left of label */
+  bottom: 0; /* Align at bottom of label */
+  width: 100%; /* Full width of label */
+  height: 2px; /* Line height for strikethrough */
+  background-color: #00ff00; /* Color of strikethrough */
+  transform: scaleX(0); /* Start with no width */
+  transform-origin: left; /* Expand from left */
+  transition: transform 0.3s ease; /* Smooth animation */
+}
+
+.my-control-label.strikethrough:hover::after {
+  transform: scaleX(1); /* Full width on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .checkbox-label-container {
+    flex-direction: row; /* Ensure items remain in a row */
+    align-items: center; /* Align items vertically */
   }
+
+  .my-control-input {
+    margin-right: 10px; /* Maintain right margin on smaller screens */
+    margin-bottom: 0; /* Remove bottom margin */
+  }
+}

@@ -1,68 +1,79 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Roboto+Condensed:wght@400;700&display=swap");
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Quicksand", sans-serif;
+  line-height: 1.5;
+
+  color: #ebe7ef;
+  background: radial-gradient(#280a48, #20043d);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  min-height: 80rem;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+
+main {
+  width: 90%;
+  max-width: 50rem;
+  margin: auto;
 }
 
-body {
+
+.headerStyle {
+  text-align: center;
+  font-family: "Roboto Condensed", sans-serif;
+  margin: 0 0 1.5rem 0;
+  color: #a18aba;
+}
+
+h2 {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 5rem;
+  background: linear-gradient(40deg, #ea00ff, #ea00ff, #03d5ff, #03d5ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+h3 {
+  margin-right: 10px; /* Adjust margin between checkbox and label */
+  font-family: "Roboto Condensed", sans-serif; /* Font family */
+  font-size: 2rem; /* Font size */
+  background: linear-gradient(40deg, #00f5a7, #ffb700, #ff8a00, #ff416c);
+  /* Gradient background */
+  -webkit-background-clip: text; /* Clip text to the background shape */
+  -webkit-text-fill-color: transparent; /* Make text transparent to show the background */
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5)); /* Drop shadow */
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+/* General Styles for TextInput */
+.text-input-container {
+  margin: 20px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+.text-input {
+  width: 100%; /* Full width for mobile responsiveness */
+  padding: 10px; /* Padding for better touch experience */
+  font-size: 16px; /* Readable font size */
+  border: 1px solid #ccc; /* Border styling */
+  border-radius: 4px; /* Rounded corners */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+  .text-input-container {
+    max-width: 600px; /* Max width for larger screens */
+    margin: 20px auto; /* Center align on larger screens */
   }
 }

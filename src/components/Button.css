@@ -1,0 +1,40 @@
+/* General Styles for Button */
+.button-container {
+    display: flex;
+    justify-content: center; /* Center align button */
+    margin: 20px;
+  }
+  
+  .button {
+    width: 100%; /* Full width for mobile responsiveness */
+    padding: 10px 20px; /* Padding for better touch experience */
+    font-size: 16px; /* Readable font size */
+    color: #fff; /* Button text color */
+    background-color: #007bff; /* Button background color */
+    border: none; /* Remove default border */
+    border-radius: 20px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-align: center; /* Center text inside button */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+  }
+  
+  .button:hover {
+    background-color: #0056b3; /* Darker background on hover */
+  }
+  
+  .button:active {
+    background-color: #004085; /* Even darker background on active */
+  }
+  
+  /* Responsive Styles */
+  @media (min-width: 768px) {
+    .button-container {
+      max-width: 300px; /* Max width for larger screens */
+      margin: 20px auto; /* Center align on larger screens */
+    }
+  
+    .button {
+      width: auto; /* Auto width for larger screens */
+    }
+  }
+  

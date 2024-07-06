@@ -22,22 +22,25 @@ function JustList({ items }) {
         return [...currentList, selectedItem];
       }
     });
-    console.log(selectedItem + " Changed");
   }
 
-  console.log('Loaded with ' + check);
 
   return (
     <div>
       {items.map((item, index) => (
-        <div key={index}>
+        <div className="checkbox-label-container" key={index}>
           <input
+            className="my-control-input"
             onChange={() => changeHandler(item)}
             type="checkbox"
             checked={check.includes(item)}
             value={item}
+            id={`checkbox-${index}`} // Unique id for each checkbox
           />
-          <label className={check.includes(item) ? "strikethrough" : undefined}>
+          <label
+            className={`my-control-label ${check.includes(item) ? 'strikethrough' : ''}`}
+            htmlFor={`checkbox-${index}`} // Corresponding id for the label
+          >
             {item}
           </label>
         </div>
