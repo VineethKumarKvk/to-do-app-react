@@ -16,7 +16,7 @@ function App() {
   });
 
   useEffect(() => {
-    Cookies.set(TODO_COOKIE, JSON.stringify(listValue), { expires: 7 });
+    Cookies.set(TODO_COOKIE, JSON.stringify(listValue), { expires: 1 });
   }, [listValue]);
 
   function inputChangeHandler(event) {
